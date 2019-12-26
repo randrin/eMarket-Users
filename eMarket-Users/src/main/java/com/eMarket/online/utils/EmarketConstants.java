@@ -1,4 +1,4 @@
-package com.eMarket.service.utils;
+package com.eMarket.online.utils;
 
 public class EmarketConstants {
 

@@ -1,4 +1,4 @@
-package com.eMarket.service.impl;
+package com.eMarket.online.service.impl;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -8,8 +8,8 @@ import com.eMarket.online.model.EmarketRole;
 import com.eMarket.online.model.EmarketUser;
 import com.eMarket.online.repository.EmarketRoleRepository;
 import com.eMarket.online.repository.EmarketUserRepository;
-import com.eMarket.service.AccountService;
-import com.eMarket.service.utils.EmarketConstants;
+import com.eMarket.online.service.AccountService;
+import com.eMarket.online.utils.EmarketConstants;
 
 @Service
 @Transactional
@@ -40,8 +40,8 @@ public class AccountServiceImpl implements AccountService {
 		emarketUser.setUsername(username);
 		emarketUser.setActived(true);
 		emarketUser.setPassword(brBCryptPasswordEncoder.encode(password));
-		addRoleToUser(username, "USER");
 		emarketUserRepository.save(emarketUser);
+		addRoleToUser(username, "USER");
 		return emarketUser;
 	}
 

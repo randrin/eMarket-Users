@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.eMarket.online.model.EmarketRole;
-import com.eMarket.service.AccountService;
+import com.eMarket.online.service.AccountService;
 
 @SpringBootApplication
 public class EMarketUsersApplication {

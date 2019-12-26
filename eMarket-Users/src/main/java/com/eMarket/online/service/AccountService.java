@@ -1,4 +1,4 @@
-package com.eMarket.service;
+package com.eMarket.online.service;
 
 import com.eMarket.online.model.EmarketRole;
 import com.eMarket.online.model.EmarketUser;
