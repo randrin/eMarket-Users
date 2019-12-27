@@ -19,6 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.eMarket.online.model.EmarketUser;
+import com.eMarket.online.utils.EmarketConstants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JWTAuthentificationFilter extends UsernamePasswordAuthenticationFilter {
@@ -53,8 +54,8 @@ public class JWTAuthentificationFilter extends UsernamePasswordAuthenticationFil
 				.withIssuer(request.getRequestURI())
 				.withSubject(userConnected.getUsername())
 				.withArrayClaim("roles", roles.toArray(new String[roles.size()]))
-				.withExpiresAt(new Date(System.currentTimeMillis() + 10*24*3600))
-				.sign(Algorithm.HMAC256("ophthacare-infos@gmail.com"));
-		response.addHeader("Authorization", jwt); 
+				.withExpiresAt(new Date(System.currentTimeMillis() + EmarketConstants.JWT_EXPIRATION))
+				.sign(Algorithm.HMAC256(EmarketConstants.JWT_SECRET));
+		response.addHeader(EmarketConstants.JWT_HEADER, jwt); 
 	}
 }
