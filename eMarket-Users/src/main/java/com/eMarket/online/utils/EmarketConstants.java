@@ -9,8 +9,8 @@ public class EmarketConstants {
 	
 	// JWT Constants
 	public static final String JWT_HEADER = "Authorization";
-	public static final String JWT_TOKEN_PREFIX = "Ophthacare ";
+	public static final String JWT_TOKEN_PREFIX = "Bearer ";
 	public static final String JWT_SECRET = "ophthacare-infos@gmail.com";
-	public static final long JWT_EXPIRATION = 10*24*3600;
+	public static final long JWT_EXPIRATION = 10*24*3600*1000;
 	
 }
