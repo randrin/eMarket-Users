@@ -14,7 +14,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>eMarket-Users</name>
-	<description>Plateforme de produits/services en ligne et Gestion de Stock Marchandises pour les utilisateurs </description>
+	<description>Services d'authentification et d'authorization des utilisateurs sur la plateforme de produits/services en ligne et Gestion de Stock Marchandises (eMarket-Online)</description>
 
 	<properties>
 		<java.version>1.8</java.version>
