@@ -36,6 +36,9 @@ public class EmarketUser implements Serializable {
 	private Long id;
 	@Column(unique = true)
 	private String username;
+	@Column(unique = true)
+	private String firstName;
+	private String lastName;
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	private boolean actived;

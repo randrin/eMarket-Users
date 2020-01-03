@@ -27,7 +27,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 	
 	@Override
-	public EmarketUser saveUser(String username, String password, String confirmedPassword) {
+	public EmarketUser saveUser(String username, String firstName, String lastName, String password, String confirmedPassword) {
 
 		EmarketUser user = emarketUserRepository.findByUsername(username);
 		if (user != null) {
@@ -38,6 +38,8 @@ public class AccountServiceImpl implements AccountService {
 		}
 		EmarketUser emarketUser = new EmarketUser();
 		emarketUser.setUsername(username);
+		emarketUser.setFirstName(firstName);
+		emarketUser.setLastName(lastName);
 		emarketUser.setActived(true);
 		emarketUser.setPassword(brBCryptPasswordEncoder.encode(password));
 		emarketUserRepository.save(emarketUser);

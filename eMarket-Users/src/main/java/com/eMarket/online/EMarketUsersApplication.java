@@ -25,8 +25,8 @@ public class EMarketUsersApplication {
 			accountService.saveRole(new EmarketRole(null, "ADMIN"));
 			accountService.saveRole(new EmarketRole(null, "SUPERVISOR"));
 			
-			Stream.of("randrino17", "vanessa07", "aurel10").forEach(user -> {
-				accountService.saveUser(user, "1234", "1234");
+			Stream.of("randrino17 Nzeukang Nimpa Randrin", "vanessa07 Takou Tsapmene Vanessa", "aurel10 Nzeukang Tchoffo Aurel").forEach(user -> {
+				accountService.saveUser(user.split(" ")[0], (user.split(" ")[1] + " " + user.split(" ")[2]), user.split(" ")[3], "1234", "1234");
 			});
 			accountService.addRoleToUser("randrino17","ADMIN");
 		};

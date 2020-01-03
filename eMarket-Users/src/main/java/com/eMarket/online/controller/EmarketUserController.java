@@ -18,7 +18,7 @@ public class EmarketUserController {
 	
 	@PostMapping("/register")
 	public EmarketUser register (@RequestBody UserForm userForm) {
-		return accountService.saveUser(userForm.getUsername(), userForm.getPassword(), userForm.getConfirmedPassword());
+		return accountService.saveUser(userForm.getUsername(), userForm.getFirstName(), userForm.getLastName(), userForm.getPassword(), userForm.getConfirmedPassword());
 	}
 }
 
@@ -26,5 +26,7 @@ public class EmarketUserController {
 class UserForm {
 	private String username;
 	private String password;
+	private String firstName;
+	private String lastName;
 	private String confirmedPassword;
 }
