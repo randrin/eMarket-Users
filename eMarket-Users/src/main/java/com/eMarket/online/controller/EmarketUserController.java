@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.eMarket.online.dto.EmarketUserRequest;
 import com.eMarket.online.model.EmarketUser;
 import com.eMarket.online.service.AccountService;
 
@@ -17,16 +18,7 @@ public class EmarketUserController {
 	private AccountService accountService;
 	
 	@PostMapping("/register")
-	public EmarketUser register (@RequestBody UserForm userForm) {
+	public EmarketUser register (@RequestBody EmarketUserRequest userForm) {
 		return accountService.saveUser(userForm.getUsername(), userForm.getFirstName(), userForm.getLastName(), userForm.getPassword(), userForm.getConfirmedPassword());
 	}
-}
-
-@Data
-class UserForm {
-	private String username;
-	private String password;
-	private String firstName;
-	private String lastName;
-	private String confirmedPassword;
 }
