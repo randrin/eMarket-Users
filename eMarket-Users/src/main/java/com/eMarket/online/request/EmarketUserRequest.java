@@ -1,4 +1,4 @@
-package com.eMarket.online.dto;
+package com.eMarket.online.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

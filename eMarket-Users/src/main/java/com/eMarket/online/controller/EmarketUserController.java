@@ -5,11 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eMarket.online.dto.EmarketUserRequest;
+import com.eMarket.online.request.EmarketUserRequest;
 import com.eMarket.online.model.EmarketUser;
 import com.eMarket.online.service.AccountService;
-
-import lombok.Data;
 
 @RestController
 public class EmarketUserController {
