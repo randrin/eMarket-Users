@@ -37,9 +37,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		// Authentification based in JWT
 		http.csrf().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		http.authorizeRequests().antMatchers("/login/**","/register/**").permitAll();
-		http.authorizeRequests().antMatchers("/emarketUsers/**", "/emarketRoles/**").hasRole("ADMIN");
-		http.authorizeRequests().anyRequest().authenticated();
+		http.cors().and().authorizeRequests().antMatchers("/login/**","/user/**").permitAll();
+		http.cors().and().authorizeRequests().antMatchers("/emarketUsers/**", "/emarketRoles/**").hasRole("ADMIN");
+		http.cors().and().authorizeRequests().anyRequest().authenticated();
 		http.addFilter(new JWTAuthentificationFilter(authenticationManager()));
 		http.addFilterBefore(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
